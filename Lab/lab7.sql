@@ -31,7 +31,10 @@ join facultate on student.fid = facultate.fid
 group by facultate.nume, student.an
 
 -- L7.Ex6. Să se afișeze bursa minimă (>0), medie și maximă a tuturor studenților care au ore in ziua de 'Luni', indiferent de curs.
-select min(bursa), avg(bursa), max(bursa)
+select 
+    min(bursa), 
+    avg(bursa), 
+    max(bursa)
 from student
 where sid in (
     select student.sid
@@ -50,7 +53,21 @@ where bursa > (
 )
 
 -- L7.Ex8. Să se calculeze intervalul de normalitate a mediilor pentru fiecare facultate în parte. Se va afișa numele fiecărei facultăți precum și pragurile de jos și de sus a intervalului de normalitate pentru mediile studenților din acea facultate.
-
+select
+    f.nume as nume_facultate,
+    ROUND(AVG(s.media) - STDDEV(s.media), 2) as prag_jos,
+    ROUND(AVG(s.media) + STDDEV(s.media), 2) as prag_sus
+from facultate f
+left join student s on s.fid = f.fid
+group by f.nume;
 
 -- L7.Ex9. Folosind subinterogări și agregări să se afișeze toți studenții care au medii în afara intervalului de normalitate a mediilor pe universitate.
-
+select *
+from student
+where media < (
+    select avg(media) - stddev(media)
+    from student
+) or media > (
+    select avg(media) + stddev(media)
+    from student
+)
