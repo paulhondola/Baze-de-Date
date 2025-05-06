@@ -71,3 +71,44 @@ where media < (
     select avg(media) + stddev(media)
     from student
 )
+
+-- Folosind agregarea datelor afisati media notelor (2 zecimale) pentru contractele de studii din semestrul 2 grupate pe fiecare an
+select
+    an,
+    trunc(avg(nota), 2)
+from contract
+where semestru = 2
+group by an
+
+-- Folosind agregarea datelor afisati varianta notelor (2 zecimale) pentru contractele de studii din semestrul 1 grupate pe fiecare an
+select
+    an,
+    trunc(variance(nota), 2)
+from contract
+where semestru = 1
+group by an
+
+-- Folosind agregarea datelor afisati numarul total de locuri ale salilor de pe fiecare etaj
+select etaj, sum(nrlocuri) as numar_locuri
+from sala
+group by etaj
+
+-- Folosind agregarea datelor afisati numarul total de cursuri din semestrul 1
+select count(*)
+from curs
+where semestru = 1
+
+-- numar studenti cu media intre 7 si 9
+select count(*)
+from student
+where media between 7 and 9
+
+-- grupurile pe baza gradului si nr de profesori pentru fiecare grup care are mai mult de 5 membri
+select grad, count(*)
+from profesor
+group by grad
+having count(*) > 5
+
+-- cel mai batran student
+select min(datan)
+from student
