@@ -13,7 +13,7 @@ create table pc_client(
 
 create table pc_componenta(
     cod_c varchar2(10) not null,
-    denumire varchar2(40) not null,
+    denumire varchar2(80) not null,
     producator varchar2(40) not null,
     pret number(6) not null,
 
