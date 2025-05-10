@@ -24,14 +24,14 @@ insert into pc_client values('1801102359886','Calin Popa','calin.popa@student.up
 insert into pc_client values('6040229355655','Alexandra Haidet','alexa.haidet2004@yandex.com');
 
 delete from pc_comanda;
-insert into pc_comanda values('P92810','1980107322077',24/04/2025);
-insert into pc_comanda values('P18019','1980107322077',25/04/2025);
-insert into pc_comanda values('P18472','1801102359886',11/12/2024);
-insert into pc_comanda values('P63803','5061202411122',30/02/2025);
-insert into pc_comanda values('P21620','6040229355655',13/05/2025);
-insert into pc_comanda values('P31999','5061202411122',28/03/2025);
-insert into pc_comanda values('P54127','1801102359886',29/06/2024);
-insert into pc_comanda values('P37272','6011021294866',16/01/2025);
+insert into pc_comanda values('P92810','1980107322077','04/24/2025');
+insert into pc_comanda values('P18019','1980107322077','04/25/2025');
+insert into pc_comanda values('P18472','1801102359886','12/11/2024');
+insert into pc_comanda values('P63803','5061202411122','02/30/2025');
+insert into pc_comanda values('P21620','6040229355655','05/13/2025');
+insert into pc_comanda values('P31999','5061202411122','03/28/2025');
+insert into pc_comanda values('P54127','1801102359886','06/29/2024');
+insert into pc_comanda values('P37272','6011021294866','01/16/2025');
 
 delete from pc_lista_comanda;
 insert into pc_lista_comanda values('P92810','C506',1);
