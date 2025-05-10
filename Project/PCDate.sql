@@ -27,7 +27,7 @@ delete from pc_comanda;
 insert into pc_comanda values('P92810','1980107322077','04/24/2025');
 insert into pc_comanda values('P18019','1980107322077','04/25/2025');
 insert into pc_comanda values('P18472','1801102359886','12/11/2024');
-insert into pc_comanda values('P63803','5061202411122','02/30/2025');
+insert into pc_comanda values('P63803','5061202411122','02/27/2025');
 insert into pc_comanda values('P21620','6040229355655','05/13/2025');
 insert into pc_comanda values('P31999','5061202411122','03/28/2025');
 insert into pc_comanda values('P54127','1801102359886','06/29/2024');
